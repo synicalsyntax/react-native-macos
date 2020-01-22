@@ -259,7 +259,7 @@ RCT_NOT_IMPLEMENTED(- (instancetype)initWithCoder:(NSCoder *)aDecoder)
 - (NSArray *)calculateChildFramesData
 {
   NSMutableArray *updatedChildFrames = [NSMutableArray new];
-  [[_contentView reactSubviews] enumerateObjectsUsingBlock:
+  [[self.contentView reactSubviews] enumerateObjectsUsingBlock:
    ^(NSView *subview, NSUInteger idx, __unused BOOL *stop) {
 
      // Check if new or changed
@@ -578,7 +578,7 @@ for (NSObject<UIScrollViewDelegate> *scrollViewListener in _scrollListeners) { \
 
 - (NSView *)viewForZoomingInScrollView:(__unused NSScrollView *)scrollView
 {
-  return _contentView;
+  return self.contentView;
 }
 
 #pragma mark - Setters
